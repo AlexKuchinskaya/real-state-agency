@@ -1,11 +1,111 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Webpack Setup</title>
-    </head>
-    <body>
-    <h3>Simple Webpack Setup</h3>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Real State Agency</title>
+    <!-- <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="preload" href="/fonts/oswaldmedium.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/oswaldregular.woff2" as="font" crossorigin="anonymous"> -->
+  </head>
+  <body class="page">
+    <header class="page-header page-header--mobile page-header--catalog">
+    </header>
+    <main class="page-main container-site">
+        <h1 class="title catalog-name">Our Latest Developments</h1>
+        <section class="catalog">
+            <h2 class="visually-hidden">Properties</h2>
+            <div class="catalog__wrapper">
+                <ul class="list container-catalog catalog__list">
+                    <li class="catalog__item property">
+                        <a class="property__link" href="">
+                            <img class="property__photo" src="img/brunless-court.png" width="377" height="227" alt="Brunlees Court">
+                            <!-- <picture>
+                            <source type="image/webp" media="(min-width: 1440px)" srcset="img/chicken-small-desktop@1x.webp 1x, img/chicken-small-desktop@2x.webp 2x">
+                            <source type="image/webp" media="(min-width: 768px)" srcset="img/chicken-small-tablet@1x.webp 1x, img/chicken-small-tablet@2x.webp 2x">
+                            <source type="image/webp" srcset="img/chicken-small-mobile@1x.webp 1x, img/chicken-small-mobile@2x.webp 2x">
+                            <source media="(min-width: 1440px)" srcset="img/chicken-small-desktop@1x.png 1x, img/chicken-small-desktop@2x.png 2x">
+                            <source media="(min-width: 768px)" srcset="img/chicken-small-tablet@1x.png 1x, img/chicken-small-tablet@2x.png 2x">
+                            <img class="product__photo product__photo--chicken" src="img/chicken-small-mobile@1x.jpg" srcset="img/chicken-small-mobile@2x.jpg 2x" width="68" height="86" alt="Cat Energy PRO 500 г, Курица">
+                            </picture> -->
+                        </a>
+                        <div class="property__resume">
+                            <a class="property__title" href=""><h3 class="title">Brunlees Court</h3></a>
+                            <span class="property__adress">19-23 Cambridge Road, Southport</span>
+                            <p class="property__information">New Properties for Sale from <strong>£214,999</strong></p>
+                            <span class="property__ownership">Shared Ownership Available</span>
+                        </div>
+                    </li>
+                    <li class="catalog__item property">
+                        <a class="property__link" href="">
+                            <img class="property__photo" src="img/brunless-court.png" width="377" height="227" alt="Brunlees Court">
+                            <!-- <picture>
+                            <source type="image/webp" media="(min-width: 1440px)" srcset="img/chicken-small-desktop@1x.webp 1x, img/chicken-small-desktop@2x.webp 2x">
+                            <source type="image/webp" media="(min-width: 768px)" srcset="img/chicken-small-tablet@1x.webp 1x, img/chicken-small-tablet@2x.webp 2x">
+                            <source type="image/webp" srcset="img/chicken-small-mobile@1x.webp 1x, img/chicken-small-mobile@2x.webp 2x">
+                            <source media="(min-width: 1440px)" srcset="img/chicken-small-desktop@1x.png 1x, img/chicken-small-desktop@2x.png 2x">
+                            <source media="(min-width: 768px)" srcset="img/chicken-small-tablet@1x.png 1x, img/chicken-small-tablet@2x.png 2x">
+                            <img class="product__photo product__photo--chicken" src="img/chicken-small-mobile@1x.jpg" srcset="img/chicken-small-mobile@2x.jpg 2x" width="68" height="86" alt="Cat Energy PRO 500 г, Курица">
+                            </picture> -->
+                        </a>
+                        <div class="property__resume">
+                            <a class="property__title" href=""><h3 class="title">Charlotte Court</h3></a>
+                            <span class="property__adress">19-23 Cambridge Road, Southport</span>
+                            <p class="property__information">New Properties for Sale from <strong>£214,999</strong></p>
+                            <span class="property__ownership">Shared Ownership Available</span>
+                        </div>
+                    </li>
+                    <li class="catalog__item property">
+                        <a class="property__link" href="">
+                            <img class="property__photo" src="img/brunless-court.png" width="377" height="227" alt="Brunlees Court">
+                        </a>
+                        <div class="property__resume">
+                            <a class="property__title" href=""><h3 class="title">Grove Court</h3></a>
+                            <span class="property__adress">19-23 Cambridge Road, Southport</span>
+                            <p class="property__information">New Properties for Sale from <strong>£214,999</strong></p>
+                            <span class="property__ownership">Shared Ownership Available</span>
+                        </div>
+                    </li>
+                    <li class="catalog__item property">
+                        <a class="property__link" href="">
+                            <img class="property__photo" src="img/brunless-court.png" width="377" height="227" alt="Brunlees Court">
+                        </a>
+                        <div class="property__resume">
+                            <a class="property__title" href=""><h3 class="title">Brunlees Court</h3></a>
+                            <span class="property__adress">19-23 Cambridge Road, Southport</span>
+                            <p class="property__information">New Properties for Sale from <strong>£214,999</strong></p>
+                            <span class="property__ownership">Shared Ownership Available</span>
+                        </div>
+                    </li>
+                    <li class="catalog__item property">
+                        <a class="property__link" href="">
+                            <img class="property__photo" src="img/brunless-court.png" width="377" height="227" alt="Brunlees Court">
+                        </a>
+                        <div class="property__resume">
+                            <a class="property__title" href=""><h3 class="title">Charlotte Court</h3></a>
+                            <span class="property__adress">19-23 Cambridge Road, Southport</span>
+                            <p class="property__information">New Properties for Sale from <strong>£214,999</strong></p>
+                            <span class="property__ownership">Shared Ownership Available</span>
+                        </div>
+                    </li>
+                    <li class="catalog__item property">
+                        <a class="property__link" href="">
+                            <img class="property__photo" src="img/brunless-court.png" width="377" height="227" alt="Brunlees Court">
+                        </a>
+                        <div class="property__resume">
+                            <a class="property__title" href=""><h3 class="title">Grove Court</h3></a>
+                            <span class="property__adress">19-23 Cambridge Road, Southport</span>
+                            <p class="property__information">New Properties for Sale from <strong>£214,999</strong></p>
+                            <span class="property__ownership">Shared Ownership Available</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <button type="button" class="button catalog-button">See more</button>
+    </main>
+    <footer class="page-footer">
+    </footer>
     <script src="./bundle.js"></script>
-    </body>
+  </body>
 </html>

@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // Require  html-webpack-plugin plugin
+var HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 const path = require('path');
 
 module.exports = {
@@ -11,13 +12,24 @@ module.exports = {
     },
     module: {
         rules: [
-        {
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            use: {
-            loader: 'babel-loader',
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                loader: 'babel-loader',
+                },
             },
-        }
+
+            {
+                test: /\.(sass|scss)$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "sass-loader" // compiles Sass to CSS
+                }]
+            }
         ],
     },
     // plugins: [  // Array of plugins to apply to build chunk
@@ -26,8 +38,18 @@ module.exports = {
     //         inject: 'body'
     //     })
     // ],
-    devServer: {  // configuration for webpack-dev-server
+    // plugins: [
+    //     new HtmlWebpackPlugin({
+    //       filename: 'index.pug',
+    //       minify: false
+    //     }),
+    //     new HtmlWebpackPugPlugin()
+    //   ],  
+    devServer: { 
         contentBase: './public',  //source of static assets
+        historyApiFallback: {
+            index: 'index.html'
+          },
         port: 7700, // port to run dev-server
         open: true
     } ,
