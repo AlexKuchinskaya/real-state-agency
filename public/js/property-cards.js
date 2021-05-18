@@ -47,4 +47,5 @@ export const renderPropertyCards = (data) => {
 }
 
 // src img?? if they all dif
-//class independ living
+// make only 3 rows button see more
+//пофиксить стрелку

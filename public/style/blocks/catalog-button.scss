@@ -6,4 +6,19 @@
     padding: 11px 0;
     padding-left: 33px;
     padding-right: 41px;
+    position: relative;
+    &::after {
+        content: "";
+        display: block;
+        background-image: url(../img/arrow.svg);
+        position: absolute;
+        width: 7px;
+        height: 14px;
+        top: 50%;
+        right: 17px;
+        transform: translateY(-50%);
+        // float: left;
+        // margin-right: 5px;
+        // margin-top: -2px;
+    }
 }
