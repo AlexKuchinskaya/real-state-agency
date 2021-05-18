@@ -29,7 +29,13 @@ module.exports = {
                 }, {
                     loader: "sass-loader" // compiles Sass to CSS
                 }]
-            }
+            },
+            {
+                test: /\.(woff|woff2)$/,
+                use: {
+                  loader: 'url-loader',
+                },
+            },
         ],
     },
     // plugins: [  // Array of plugins to apply to build chunk
