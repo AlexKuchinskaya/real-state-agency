@@ -29,8 +29,9 @@ const renderPropertyTypes = (title, optionOne, optionTwo) => {
         
     }
 }
-export const renderPropertyCards = (data) => {
-    catalogList.innerHTML =  data.map((element) => {
+export const renderPropertyCards = (data, numberOfCards) => {
+    console.log(`propertyyData button`, numberOfCards)
+    catalogList.innerHTML =  data.slice(0, numberOfCards).map((element) => {
         return `<li class="catalog__item property">
             <a class="property__link" href="">
                 <img class="property__photo" src="img/brunless-court.png" width="377" height="227" alt="${element.title}">
