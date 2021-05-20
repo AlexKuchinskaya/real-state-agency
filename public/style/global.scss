@@ -2,11 +2,25 @@ a {
     text-decoration: none;
   }
   
-  img {
-    max-width: 100%;
-    height: auto;
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+  body, html {
+    width:100%;
+    
+    // max-width: 320px;
+    // margin: 0 auto;
   }
-  
-  body {
-    overflow-x: hidden;
-  }
+  // body {
+  //   box-sizing: border-box;
+  //   width: 100%;
+  //   max-width: 1280px;
+  //   margin: 0 auto;
+  // }

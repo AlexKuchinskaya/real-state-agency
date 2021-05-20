@@ -5,10 +5,15 @@
 
 .property__link {
     display: block;
+    width: 100%;
     box-sizing: border-box;
     position: relative;
 }
 
+.property__address {
+    display: block;
+    margin-top: 4px;
+}
 .property__type {
     position: absolute;
     display: block;
@@ -35,10 +40,6 @@
     }
 }
 
-.property__title {
-    margin-bottom: 2px;
-}
-
 .property__information {
     margin: 0;
     margin-top: 15px;
@@ -47,11 +48,21 @@
 
 .property__resume {
    padding-left: 10px;
-   padding-top: 20px;
+   padding-top: 15px;
    padding-bottom: 17px;
    padding-right: 10px;
+   width: 100%;
+   box-sizing: border-box;
    @media (min-width: $desktop-width) {
        padding-right: 0;
        padding-left: 20px;
    }
+}
+
+.property__photo {
+    height: 227px;
+    width: 277px;
+    @media (min-width: $desktop-width) {
+        width: 377px;
+    }
 }

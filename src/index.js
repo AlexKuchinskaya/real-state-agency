@@ -4,6 +4,8 @@ import '/public/style/app.scss';
 
 const showMoreButton = document.querySelector(`.catalog-button`);
 const filterInput = document.querySelector(`.filter-form__input`);
+let propertyLinks = document.querySelectorAll(`.property__link`);
+console.log(`propertyLinks`, propertyLinks)
 let numberToShow = 6;
 let propertyyData = [];
 let propertyCardsList
@@ -20,6 +22,16 @@ const getServerAnswerSuccess = (response) => {
     propertyyData = response;
     console.log(`propertyyData`, propertyyData)
     renderPropertyCardsAndButton(propertyyData);
+    propertyLinks = document.querySelectorAll(`.property__link`);
+    console.log(`propertyLinks2`, propertyLinks)
+    propertyLinks.forEach((link) => {
+        console.log(`link`, link)
+        link.addEventListener(`click`, (evt) => {
+            console.log(`hi`)
+            evt.preventDefault();
+            window.location.href = 'card-pug.html';
+        })
+    })
     // if (propertyCardsList > numberToShow) {
     //     showMoreButton.style.display = `block`;
     // } else {
