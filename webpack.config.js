@@ -5,7 +5,6 @@ module.exports = {
     output: {
         path: __dirname + '/docs',
         filename: 'bundle.js',
-        // publicPath: '/' // public URL of the output directory when referenced in a browser
     },
     module: {
         rules: [
@@ -55,8 +54,5 @@ module.exports = {
         port: 7700,
         open: true
     } ,
-    // resolve: {
-    //     extensions: [".js", ".json"]
-    // },
     devtool: 'source-map',
 };

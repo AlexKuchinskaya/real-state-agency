@@ -2,7 +2,8 @@ import '../docs/style/app.scss';
 import { compareNames } from '../docs/js/filter';
 import { load } from '../docs/js/load';
 import { renderPropertyCards } from '../docs/js/property-cards';
-import { ShowButtonNumbers } from '../docs/js/const';
+import { NUMBER_OF_SYMBOLS_INPUT, ShowButtonNumbers, ShowButtonContent } from '../docs/js/const';
+import { renderServerErrorMessage } from '../docs/js/server-error';
 
 
 const showMoreLessButton = document.querySelector(`.catalog-button`);
@@ -15,33 +16,24 @@ let propertyyData = [];
 let propertyCads;
 
 
-console.log(`propertyCads`, propertyCads)
 const renderShowMoreShowLessButton = (data) => {
-    console.log(`numberToShow before`, numberToShow)
-    console.log(`propertyCads before`, propertyCads)
     if (data.length > propertyCads || propertyCads === undefined) {
         numberToShow = numberToShow + ShowButtonNumbers.SUMM_TO_ADD;
         propertyCads = numberToShow;
-        showMoreLessButton.textContent = `See more`
+        showMoreLessButton.textContent = ShowButtonContent.SHOW_MORE;
         if (propertyCads === ShowButtonNumbers.NUMBER_TO_LESS) {
-            showMoreLessButton.textContent = `Load less`;    
+            showMoreLessButton.textContent = ShowButtonContent.LOAD_LESS;
         }
     
     } else {
-        console.log(`hi`)
         numberToShow = numberToShow - ShowButtonNumbers.SUMM_TO_ADD;
         propertyCads = numberToShow + ShowButtonNumbers.SUMM_TO_ADD;
-        showMoreLessButton.textContent = `Load less`;
+        showMoreLessButton.textContent = ShowButtonContent.LOAD_LESS;
         if (propertyCads === ShowButtonNumbers.NUMBER_TO_MORE) {
-            showMoreLessButton.textContent = `See more`;
+            showMoreLessButton.textContent = ShowButtonContent.SHOW_MORE;
             
         }
-        console.log(`numberToShow else`, numberToShow)
-        console.log(`propertyCads`, propertyCads)
     }
-  
-    console.log(`propertyCads after click`, propertyCads)
-    console.log(`numberToShow`, numberToShow)
     renderPropertyCards(data, numberToShow);
 }
 
@@ -55,21 +47,16 @@ const renderPropertyCardsAndButton = (data) => {
 }
 const getServerAnswerSuccess = (response) => {
     propertyyData = response;
-    console.log(`propertyyData`, propertyyData)
     renderPropertyCardsAndButton(propertyyData);
     propertyLinks = document.querySelectorAll(`.property__link`);
-    // if (propertyCardsList > numberToShow) {
-    //     showMoreButton.style.display = `block`;
-    // } else {
-    //     showMoreButton.style.display = `none`;
-    // }
-    // renderPropertyCards(propertyyData, numberToShow);
+};
 
-  };
 const getServerAnswerError = () => {
-    console.log(`error`)
+    renderServerErrorMessage();
 }
+
 load(getServerAnswerSuccess, getServerAnswerError);
+
 showMoreLessButton.addEventListener(`click`, (evt) => {
     evt.preventDefault;
     renderShowMoreShowLessButton(propertyyData);
@@ -78,17 +65,12 @@ showMoreLessButton.addEventListener(`click`, (evt) => {
 
 filterInput.addEventListener(`input`, (evt) => {
     let inputValue = evt.target.value;
-    console.log(`inputValue`, inputValue)
     let propertyyDataFileterd = []
-    if (inputValue.length >= 3) {
-        console.log(`inputValue 3`)
+    if (inputValue.length >= NUMBER_OF_SYMBOLS_INPUT) {
         propertyyDataFileterd = propertyyData.slice().filter((data) => {
-            console.log(`data`, data)
             return compareNames(data.title, inputValue)
         })
-        console.log(`propertyyDataFileterd`, propertyyDataFileterd)
         renderPropertyCardsAndButton(propertyyDataFileterd)
-        // return newArr;
     } else {
         renderPropertyCardsAndButton(propertyyData)
     }
@@ -96,14 +78,9 @@ filterInput.addEventListener(`input`, (evt) => {
 
 
 cardsItemsList.addEventListener('click', (evt) => {
-    // console.log(`cardsItemsList`, cardsItemsList);
     if (evt.target === cardsItemsList) {
         return;
     } else {
         evt.preventDefault();
     }
-}
-
-);
-
-// сделать ссылкой всю карточку
+});

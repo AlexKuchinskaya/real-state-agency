@@ -49,10 +49,5 @@ export const renderPropertyCardsTempalte = (data, numberOfCards) => {
     })
 }
 export const renderPropertyCards = (data, numberOfCards) => {
-    console.log(`propertyyData button`, numberOfCards)
     catalogList.innerHTML = renderPropertyCardsTempalte(data, numberOfCards).join(``)
 }
-
-
-// make only 3 rows button see more
-//пофиксить стрелку

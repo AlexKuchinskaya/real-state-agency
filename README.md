@@ -3,7 +3,7 @@
 
 [Published site](https://alexandra207.github.io/real-state-agency/)
 
-Real State Agency its a test project that was written in HTML, CSS and vanilla JS and then built and published with Webpack packaging tool. Moreover, SASS preprocessor was used to automate repetitive tasks and to reduce the number of errors and code bloat. In terms of class naming, there was used the component-driven CSS methodology - BEM methodology. The website is adaptive to multiple fixed layout sizes: mobile, tablet, desktop. To gain this "flexibility" the grid layouts were used.
+Real State Agency its a test project that was written in HTML, CSS and vanilla JS(ES2015+) and then built and published with Webpack packaging tool. Moreover, SASS preprocessor was used to automate repetitive tasks and to reduce the number of errors and code bloat. In terms of class naming, there was used the component-driven CSS methodology - BEM methodology. The website is adaptive to multiple fixed layout sizes: mobile, tablet, desktop. To gain this "flexibility" the grid layouts were used.
 
 Some other distinctive features of the project are:
 
@@ -19,7 +19,7 @@ Some other distinctive features of the project are:
 
 Бизнес-сайт Real State Agency
 
-Real State Agency - это тетсовый проект, который написан с использованием ванильного HTML, CSS и JS и собран с помощью Webpack. Для автоматизации повторяющихся задач и уменьшения количества ошибок и раздувания кода был использован препроцессор SASS. По части именования классов, использовалась методология БЭМ. Веб-сайт адаптируется к нескольким видам устройства: mobile, tablet, desktop. Чтобы добиться этой адаптивности, были применены grid-сетки.
+Real State Agency - это тетсовый проект, который написан с использованием ванильного HTML, CSS и JS(ES2015+) и собран с помощью Webpack. Для автоматизации повторяющихся задач и уменьшения количества ошибок и раздувания кода был использован препроцессор SASS. По части именования классов, использовалась методология БЭМ. Веб-сайт адаптируется к нескольким видам устройства: mobile, tablet, desktop. Чтобы добиться этой адаптивности, были применены grid-сетки.
 
 Некоторые другие отличительные особенности проекта:
 

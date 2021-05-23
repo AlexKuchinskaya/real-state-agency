@@ -15,12 +15,9 @@ const imageNames = [
 ]
 
 export const compareImageNmaes = (dataElement) => {
-    // console.log(`dataElement`, dataElement)
     const dataToLowerCase = dataElement.toLowerCase().replace(/-/g, ` `);
-    // console.log(`dataToLowerCase`, dataToLowerCase)
     return imageNames.filter((image) => {
         const nameWithoutHyphen = image.replace(/-/g, ` `);
-        // console.log(`nameWithoutHyphen`, nameWithoutHyphen)
         return nameWithoutHyphen === dataToLowerCase
     })
 }
