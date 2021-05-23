@@ -1,13 +1,10 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // Require  html-webpack-plugin plugin
-var HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 const path = require('path');
 
 module.exports = {
-    entry: [`./src/index.js`], // webpack entry point. Module to start building dependency graph
+    entry: [`./src/index.js`],
     output: {
-        // path: path.resolve(__dirname, '/public'),
-        path: __dirname + '/public', // Folder to store generated bundle
-        filename: 'bundle.js',  // Name of generated bundle after build
+        path: __dirname + '/public',
+        filename: 'bundle.js',
         // publicPath: '/' // public URL of the output directory when referenced in a browser
     },
     module: {
@@ -23,11 +20,11 @@ module.exports = {
             {
                 test: /\.(sass|scss)$/,
                 use: [{
-                    loader: "style-loader" // creates style nodes from JS strings
+                    loader: "style-loader"
                 }, {
-                    loader: "css-loader" // translates CSS into CommonJS
+                    loader: "css-loader"
                 }, {
-                    loader: "sass-loader" // compiles Sass to CSS
+                    loader: "sass-loader"
                 }]
             },
             {
@@ -49,25 +46,12 @@ module.exports = {
             },
         ],
     },
-    // plugins: [  // Array of plugins to apply to build chunk
-    //     new HtmlWebpackPlugin({
-    //         template: __dirname + "./public/index.html",
-    //         inject: 'body'
-    //     })
-    // ],
-    // plugins: [
-    //     new HtmlWebpackPlugin({
-    //       filename: 'index.pug',
-    //       minify: false
-    //     }),
-    //     new HtmlWebpackPugPlugin()
-    //   ],  
     devServer: { 
-        contentBase: './public',  //source of static assets
+        contentBase: './public',
         historyApiFallback: {
             index: 'index.html'
           },
-        port: 7700, // port to run dev-server
+        port: 7700,
         open: true
     } ,
     // resolve: {
