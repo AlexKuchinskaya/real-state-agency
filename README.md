@@ -13,7 +13,7 @@ Some other distinctive features of the project are:
 - Good practices in terms of accessibility, SEO, performance. For example, the website can be fully navigated with the 'Tab' button.
 - As to the images, there were generated using this [free image placeholder service](https://placeholder.com/)
 
-[Ссылка на макет в Figma]((https://www.figma.com/file/cY6tKxpA9pFG4RBen42GSK/UI-Dev---test-task-2-(Copy-of-test-project-Fuse8)?node-id=0%3A1))
+[Ссылка на макет в Figma](https://www.figma.com/file/cY6tKxpA9pFG4RBen42GSK/UI-Dev---test-task-2-(Copy-of-test-project-Fuse8)?node-id=0%3A1)
 
 [Опубликованный сайт](https://alexandra207.github.io/real-state-agency/)
 
