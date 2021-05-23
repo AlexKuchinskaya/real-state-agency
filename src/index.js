@@ -1,4 +1,4 @@
-import '/docs/style/app.scss';
+import '../docs/style/app.scss';
 import { compareNames } from '../docs/js/filter';
 import { load } from '../docs/js/load';
 import { renderPropertyCards } from '../docs/js/property-cards';
