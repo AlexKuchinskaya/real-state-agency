@@ -1,7 +1,7 @@
 # Business website Real State Agency
 [Figma link](https://www.figma.com/file/cY6tKxpA9pFG4RBen42GSK/UI-Dev---test-task-2-(Copy-of-test-project-Fuse8)?node-id=0%3A1)
 
-Published site
+[Published site](https://alexandra207.github.io/real-state-agency/)
 
 Real State Agency its a test project that was written in HTML, CSS and vanilla JS and then built and published with Webpack packaging tool. Moreover, SASS preprocessor was used to automate repetitive tasks and to reduce the number of errors and code bloat. In terms of class naming, there was used the component-driven CSS methodology - BEM methodology. The website is adaptive to multiple fixed layout sizes: mobile, tablet, desktop. To gain this "flexibility" the grid layouts were used.
 
@@ -15,7 +15,7 @@ Some other distinctive features of the project are:
 
 [Ссылка на макет в Figma]((https://www.figma.com/file/cY6tKxpA9pFG4RBen42GSK/UI-Dev---test-task-2-(Copy-of-test-project-Fuse8)?node-id=0%3A1))
 
-Опубликованный сайт
+[Опубликованный сайт](https://alexandra207.github.io/real-state-agency/)
 
 Бизнес-сайт Real State Agency
 
