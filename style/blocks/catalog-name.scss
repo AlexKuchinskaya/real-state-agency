@@ -1,0 +1,15 @@
+.catalog-name {
+    line-height: 49.03px;
+    font-size: 36px;
+    text-align: center;
+    color: $basic-green;
+    margin-bottom: 44px;
+    @media (min-width: $desktop-width) {
+      text-align: left;
+      margin: 0 auto;
+      margin-bottom: 44px;
+      width: 481px;
+      // // padding-left: 399px;
+      // // padding-right: 421px;
+    }
+  }

@@ -1,0 +1,24 @@
+.catalog {
+    padding-top: 36px;
+}
+
+.catalog__form {
+    margin-bottom: 45px;
+    width: 100%;
+}
+
+.catalog__list {
+    width: 100%;
+    display: grid;
+    grid-row-gap: 38px;
+    grid-template-columns: 280px;
+    @media (min-width: $tablet-width) {
+        grid-template-columns: 300px 300px;
+        grid-column-gap: 40px;
+    }
+    @media (min-width: $desktop-width) {
+        grid-template-columns: 379px 379px 379px;
+        grid-column-gap: 21px;
+    }
+}
+
