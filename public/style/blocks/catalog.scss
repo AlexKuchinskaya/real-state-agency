@@ -1,7 +1,5 @@
 .catalog {
-    margin-bottom: 60px;
-    width: 100%;
-    max-width: 1280px;
+    padding-top: 36px;
 }
 
 .catalog__form {
@@ -13,9 +11,9 @@
     width: 100%;
     display: grid;
     grid-row-gap: 38px;
+    grid-template-columns: 280px;
     @media (min-width: $tablet-width) {
-        grid-template-columns: 280px;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 300px 300px;
         grid-column-gap: 40px;
     }
     @media (min-width: $desktop-width) {
@@ -24,17 +22,3 @@
     }
 }
 
-.catalog__item {
-    box-sizing: border-box;
-    // width: 280px;
-    // @media (min-width: $tablet-width) {
-    //     width: 377px;
-    // }
-    // @media (min-width: $desktop-width) {
-    //     width: 377px;
-    // }
-    // margin-right: 22px;
-    // &:nth-child(3n) {
-    //     margin-right: 0;
-    //   }
-}

@@ -1,37 +1,63 @@
+import '/public/style/app.scss';
+import { compareNames } from '../public/js/filter';
 import { load } from '../public/js/load';
 import { renderPropertyCards } from '../public/js/property-cards';
-import '/public/style/app.scss';
+import { ShowButtonNumbers } from '../public/js/const';
 
-const showMoreButton = document.querySelector(`.catalog-button`);
+
+const showMoreLessButton = document.querySelector(`.catalog-button`);
 const filterInput = document.querySelector(`.filter-form__input`);
 let propertyLinks = document.querySelectorAll(`.property__link`);
-console.log(`propertyLinks`, propertyLinks)
+const cardsItemsList = document.querySelector(`.catalog__list`);
+
 let numberToShow = 6;
 let propertyyData = [];
-let propertyCardsList
+let propertyCads;
+
+
+console.log(`propertyCads`, propertyCads)
+const renderShowMoreShowLessButton = (data) => {
+    console.log(`numberToShow before`, numberToShow)
+    console.log(`propertyCads before`, propertyCads)
+    if (data.length > propertyCads || propertyCads === undefined) {
+        numberToShow = numberToShow + ShowButtonNumbers.SUMM_TO_ADD;
+        propertyCads = numberToShow;
+        showMoreLessButton.textContent = `See more`
+        if (propertyCads === ShowButtonNumbers.NUMBER_TO_LESS) {
+            showMoreLessButton.textContent = `Load less`;    
+        }
+    
+    } else {
+        console.log(`hi`)
+        numberToShow = numberToShow - ShowButtonNumbers.SUMM_TO_ADD;
+        propertyCads = numberToShow + ShowButtonNumbers.SUMM_TO_ADD;
+        showMoreLessButton.textContent = `Load less`;
+        if (propertyCads === ShowButtonNumbers.NUMBER_TO_MORE) {
+            showMoreLessButton.textContent = `See more`;
+            
+        }
+        console.log(`numberToShow else`, numberToShow)
+        console.log(`propertyCads`, propertyCads)
+    }
+  
+    console.log(`propertyCads after click`, propertyCads)
+    console.log(`numberToShow`, numberToShow)
+    renderPropertyCards(data, numberToShow);
+}
+
 const renderPropertyCardsAndButton = (data) => {
     if (data.length > numberToShow) {
-        showMoreButton.style.display = `block`;
+        showMoreLessButton.style.display = `block`;
     } else {
-        showMoreButton.style.display = `none`;
+        showMoreLessButton.style.display = `none`;
     }
     renderPropertyCards(data, numberToShow);
 }
-console.log(`propertyyData length`, propertyyData.length)
 const getServerAnswerSuccess = (response) => {
     propertyyData = response;
     console.log(`propertyyData`, propertyyData)
     renderPropertyCardsAndButton(propertyyData);
     propertyLinks = document.querySelectorAll(`.property__link`);
-    console.log(`propertyLinks2`, propertyLinks)
-    propertyLinks.forEach((link) => {
-        console.log(`link`, link)
-        link.addEventListener(`click`, (evt) => {
-            console.log(`hi`)
-            evt.preventDefault();
-            window.location.href = 'card-pug.html';
-        })
-    })
     // if (propertyCardsList > numberToShow) {
     //     showMoreButton.style.display = `block`;
     // } else {
@@ -44,31 +70,40 @@ const getServerAnswerError = () => {
     console.log(`error`)
 }
 load(getServerAnswerSuccess, getServerAnswerError);
-showMoreButton.addEventListener(`click`, (evt) => {
+showMoreLessButton.addEventListener(`click`, (evt) => {
     evt.preventDefault;
-    numberToShow = numberToShow + 3;
-    renderPropertyCardsAndButton(propertyyData);
+    renderShowMoreShowLessButton(propertyyData);
 })
+
 
 filterInput.addEventListener(`input`, (evt) => {
     let inputValue = evt.target.value;
     console.log(`inputValue`, inputValue)
+    let propertyyDataFileterd = []
     if (inputValue.length >= 3) {
         console.log(`inputValue 3`)
-        const propertyyDataFileterd = propertyyData.slice().filter((data) => {
+        propertyyDataFileterd = propertyyData.slice().filter((data) => {
             console.log(`data`, data)
-            // console.log(`data.title`, data.title.length)
-            // return data.title.length < 6
-            const dataToLowerCase = data.title.toLowerCase();
-            console.log(`dataToLowerCase`, dataToLowerCase)
-
-            console.log(`dataInlcudes`, dataToLowerCase.includes(inputValue))
-            return dataToLowerCase.includes(inputValue) 
+            return compareNames(data.title, inputValue)
         })
         console.log(`propertyyDataFileterd`, propertyyDataFileterd)
         renderPropertyCardsAndButton(propertyyDataFileterd)
         // return newArr;
+    } else {
+        renderPropertyCardsAndButton(propertyyData)
     }
 })
 
-// mocks [{"id":"1","title":"Brunlees Court","address":"19-23 Cambridge Road, Southport","type":"IndependentLiving","price":483000},{"id":"2","title":"Charlotte Court","address":"514 Muller Mount","type":"IndependentLiving","price":260000},{"id":"3","title":"Protocol Virginia","address":"19-10 Adam Street, London","type":"IndependentLiving","price":468000},{"id":"4","title":"infomediaries Row","address":"451 Swaniawski Ford","type":"SupportAvailable","price":234000},{"id":"5","title":"SMS","address":"67160 Huel Well","type":"SupportAvailable","price":931000},{"id":"6","title":"Checking Account technologies","address":"1352 Pete Shoals","type":"IndependentLiving","price":449000},{"id":"7","title":"New Caledonia invoice","address":"88517 Bernier Vista","type":"SupportAvailable","price":326000},{"id":"8","title":"Architect","address":"09540 Madge River","type":"IndependentLiving","price":369000},{"id":"9","title":"Indexing application","address":"1603 Kutch Well","type":"IndependentLiving","price":363000},{"id":"10","title":"Summit","address":"7645 Iliana Course","type":"IndependentLiving","price":788000},{"id":"11","title":"Web cross-platform","address":"46820 Barton Avenue","type":"IndependentLiving","price":850000},{"id":"12","title":"Virtual Fantastic Granite","address":"471 Marshall Street","type":"IndependentLiving","price":214000}]
+
+cardsItemsList.addEventListener('click', (evt) => {
+    // console.log(`cardsItemsList`, cardsItemsList);
+    if (evt.target === cardsItemsList) {
+        return;
+    } else {
+        evt.preventDefault();
+    }
+}
+
+);
+
+// сделать ссылкой всю карточку

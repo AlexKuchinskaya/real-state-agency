@@ -1,21 +1,26 @@
 .catalog-button {
-    // width: 150px;
-    margin: 0 auto;
+    width: 150px;
+    // margin: 0 auto;
     border-radius: 25px;
     border: 1px solid #D8D8D8;
-    padding: 11px 0;
-    padding-left: 33px;
-    padding-right: 41px;
+    padding: 13px 0;
+    font: inherit;
+    font-weight: 700;
     position: relative;
+    margin-top: 60px;
+    &--less {
+        display: none;
+    }
     &::after {
         content: "";
         display: block;
         background-image: url(../img/arrow.svg);
         position: absolute;
-        width: 7px;
-        height: 14px;
+        width: 6px;
+        height: 18px;
         top: 50%;
-        right: 17px;
+        right: 26px;
         transform: translateY(-50%);
     }
+    
 }

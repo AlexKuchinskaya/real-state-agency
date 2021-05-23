@@ -73,5 +73,5 @@ module.exports = {
     // resolve: {
     //     extensions: [".js", ".json"]
     // },
-    // devtool: 'source-map',
+    devtool: 'source-map',
 };
