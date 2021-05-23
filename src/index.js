@@ -1,8 +1,8 @@
-import '/public/style/app.scss';
-import { compareNames } from '../public/js/filter';
-import { load } from '../public/js/load';
-import { renderPropertyCards } from '../public/js/property-cards';
-import { ShowButtonNumbers } from '../public/js/const';
+import '/docs/style/app.scss';
+import { compareNames } from '../docs/js/filter';
+import { load } from '../docs/js/load';
+import { renderPropertyCards } from '../docs/js/property-cards';
+import { ShowButtonNumbers } from '../docs/js/const';
 
 
 const showMoreLessButton = document.querySelector(`.catalog-button`);

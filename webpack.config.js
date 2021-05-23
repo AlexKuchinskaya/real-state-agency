@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     entry: [`./src/index.js`],
     output: {
-        path: __dirname + '/public',
+        path: __dirname + '/docs',
         filename: 'bundle.js',
         // publicPath: '/' // public URL of the output directory when referenced in a browser
     },
@@ -47,7 +47,7 @@ module.exports = {
         ],
     },
     devServer: { 
-        contentBase: './public',
+        contentBase: './docs',
         historyApiFallback: {
             index: 'index.html'
           },
