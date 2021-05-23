@@ -1,7 +1,9 @@
 .catalog-button-container {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 60px;
     @media (min-width: $desktop-width) {
-        max-width: 1280px;
-        padding-left: 552px;
-        padding-right: 578px;
+        padding-left: 502px;
+        padding-right: 528px;
     }
 }

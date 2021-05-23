@@ -1,6 +1,4 @@
 .container-site {
-    // width: 100%;
-    // box-sizing: border-box;
     width: 280px;
     margin: 0 auto;
     padding: 0 20px;
@@ -11,7 +9,6 @@
     }
   
     @media (min-width: 1280px) {
-      // box-sizing: border-box;
       width: 1180px;
       padding: 36px 0px 0px;
     }

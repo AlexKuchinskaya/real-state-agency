@@ -12,14 +12,14 @@ const ajax = (method, url, onSuccess, onError) => {
         if (xhr.status === STATUS_CODE.OK) {
           onSuccess(xhr.response);
         } else {
-          onError(`Статус ответа: ` + xhr.status + ` ` + xhr.statusText);
+          onError(`Answer statys: ` + xhr.status + ` ` + xhr.statusText);
         }
       });
     xhr.addEventListener(`error`, function () {
-    onError(`Произошла ошибка соединения`);
+    onError(`There was produced a connection mistake`);
     });
     xhr.addEventListener(`timeout`, function () {
-    onError(`Запрос не успел выполниться за ` + xhr.timeout + `мс`);
+    onError(`The request couldn't be executed in ` + xhr.timeout + `ms`);
     });
     xhr.open(method, url);
     xhr.send();
